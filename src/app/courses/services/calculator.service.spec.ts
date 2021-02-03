@@ -8,6 +8,10 @@ describe('CalculatorService', () => {
     let calculator: CalculatorService,
         loggerSpy: any;
 
+    beforeAll(() => {
+
+    });
+
     beforeEach(()=> {
 
         console.log("Calling beforeEach");
@@ -29,14 +33,21 @@ describe('CalculatorService', () => {
 
         console.log("add test");
 
-        const result = calculator.add(2, 2);
-
+        //const result = calculator.add(2, 2);
+        const result = calculator.sumOfTwoNumbers(2, 2);
         expect(result).toBe(4);
 
         expect(loggerSpy.log).toHaveBeenCalledTimes(1);
 
     });
 
+    // it('should add multiple numbers', () => {
+    //     console.log("add multiple numbers test");
+    //     numbers = [2, 3, 5, 9];
+    //     const result = calculator.addMultiple(numbers);
+    //     expect(result).toBe(19);
+    //     expect(loggerSpy.log).toHaveBeenCalledTimes(1)
+    // });
 
     it('should subtract two numbers', () => {
 
